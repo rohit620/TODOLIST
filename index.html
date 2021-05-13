@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+
+        * {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+
+            box-sizing: border-box;
+        }
+
+        body {
+            /* font-family: 'Montserrat Subrayada', sans-serif; */
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        nav {
+            background-color: #0082e6;
+            height: 80px;
+        }
+
+        label.logo {
+            color: #fff;
+            font-size: 35px;
+            line-height: 80px;
+            padding: 0 100px;
+            font-weight: bold;
+            padding-left: 40vw;
+        }
+
+        nav ul {
+            float: right;
+            margin-right: 20px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            line-height: 80px;
+            margin: 0 5x;
+
+        }
+
+        nav ul li a {
+            color: #fff;
+            font-size: 17px;
+            padding: 7px 13px;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+
+        a.active,
+        a:hover {
+            background-color: #1b9bff;
+            transition: 0.5s;
+        }
+
+        .checkbtn {
+            font-size: 30px;
+            color: #fff;
+            float: right;
+            line-height: 80px;
+            margin-right: 40px;
+            cursor: pointer;
+            display: none;
+        }
+
+        #check {
+            display: none;
+        }
+
+        /* @media (max-width:952px) {
+            label.logo {
+                font-size: 30px;
+                padding-left: 50px;
+            }
+
+            nav ul li a {
+                font-size: 16px;
+
+            }
+        }
+
+        @media (max-width:858px) {
+            .checkbtn {
+                display: block;
+            } */
+
+/* 
+            ul {
+                background-color: #2c3e50;
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                top: 80px;
+                left: -100%;
+                text-align: center;
+                transition: all .5s;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 50px 0;
+                line-height: 30px;
+            }
+
+            nav ul li a {
+                font-size: 20px;
+            }
+
+            a:hover,
+            a.active {
+                background: none;
+                color: #0082e6;
+            }
+
+            #check:checked~ul {
+                left: 0;
+            } */
+        
+
+    
+        .container {
+                 padding: 12px 19vw;
+                     }
+       
+
+        table tr th {
+            
+            border: solid 2px rebeccapurple;
+        }
+        .container input{
+            height: 4vh;
+            width: 31vw;
+        }
+        #add{
+           margin-top: 4px;
+           width:100px;
+           height: 25px;
+           border-radius: 5px;
+           border-style: none;
+        }
+        #clearlist {
+           margin-top: 4px;
+           width:100px;
+           height: 25px;
+           border-radius: 5px;
+           border-style: none;
+
+        }
+        /* button{
+           #clearlist {
+           margin-top: 4px;
+           width:100px;
+           height: 25px;
+           border-radius: 5px;
+           border-style: none;
+
+        }
+
+        } */
+        .table button{
+           margin-top: 4px;
+           width:100px;
+           height: 25px;
+           border-radius: 5px;
+           border-style: none;
+
+        }
+        .table button:hover{
+            background-color: #1b9bff;
+            color:#fff ;
+        }
+        
+        #clearlist:hover{
+            background-color: #1b9bff;
+            color:#fff ;
+        }
+        #add:hover{
+            background-color: #1b9bff;
+            color:#fff ;
+        }
+        .del{
+            background-color: red;
+        }
+             @media (max-width:1099px) {
+                table tr th {
+                  
+                    padding: 2px 10px;
+        }
+            } 
+            @media (max-width:1014px) {
+            .container input{
+                    height: 4vh;
+                    width: 40vh;
+        }
+        }
+        @media (max-width:1014px) {
+            .container{
+                    padding: 25px;
+        }
+        }
+        @media (max-width:568px) {
+            
+        }
+        
+    
+      
+    </style>
+</head>
+
+<body>
+    <nav>
+        <label class="logo">TODO</label>
+    </nav>
+    
+    <div class="container">
+        <h1>Todo List</h1>
+        <h4>title</h4>
+        <div class="input">
+        <input type="text" id="title">
+        <p>Add an item to the list</p>
+        <h4>discription</h4>
+       <input type="text"  id="description">
+        <br>
+    </div>
+        <button id="add">Add </button>
+        <button id="clearlist" onclick="clearStorage()">clearlist</button>
+        <h1>your items</h1>
+        <table style="width:50%" class="table">
+            <tr>
+                <th>sno</th>
+                <th>Item Title</th>
+                <th>Item Description</th>
+                <th>Actions</th>
+            </tr>
+            <tbody id="tablebody">
+                <tr>
+                    <td>
+                        <p>1</p>
+                    </td>
+                    <td>
+                        <p>get some coffee</p>
+                    </td>
+                    <td>
+                        <p>you need a coffe as you are a coder</p>
+                    </td>
+                    <td>
+                        <button>delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <script>
+        function getanupdate() {
+            if (localStorage.getItem('itemsJson'))
+                console.log("updating list...");
+            tit = document.getElementById("title").value;
+            des = document.getElementById("description").value;
+            if (localStorage.getItem('itemsJson') == null) {
+                itemjsonarray = [];
+                itemjsonarray.push([tit, des]);
+                localStorage.setItem('itemsJson', JSON.stringify(itemjsonarray));
+
+            }
+            else {
+                itemjsonarraystr = localStorage.getItem('itemsJson');
+                itemjsonarray = JSON.parse(itemjsonarraystr);
+                itemjsonarray.push([tit, des]);
+                localStorage.setItem('itemsJson', JSON.stringify(itemjsonarray));
+            }
+            update();
+        }
+        
+        function update(){
+            if (localStorage.getItem('itemsJson') == null) {
+                itemjsonarray = [];
+                localStorage.setItem('itemsJson', JSON.stringify(itemjsonarray));
+
+            }
+            else {
+                itemjsonarraystr = localStorage.getItem('itemsJson');
+                itemjsonarray = JSON.parse(itemjsonarraystr);
+              
+            }
+            let tablebody = document.getElementById("tablebody");
+            let str = "";
+            itemjsonarray.forEach((element, index) => {
+                str += `
+                <tr>
+                <td>${index + 1}</td>
+                <td>${element[0]}</td>
+                <td>${element[1]}</td>
+                <td><button onclick="deleted(${index})">delete</button></td>
+                </tr>`;
+            });
+            tablebody.innerHTML = str;
+        }
+        add = document.getElementById("add");
+        add.addEventListener("click", getanupdate)
+        update();
+
+        function deleted(itemIndex) {
+            console.log("delete", itemIndex);
+            itemjsonarraystr = localStorage.getItem('itemsJson');
+            itemjsonarray = JSON.parse(itemjsonarraystr);
+            // delete item index from array
+            itemjsonarray.splice(itemIndex, 1)
+            localStorage.setItem('itemsJson', JSON.stringify(itemjsonarray));
+            update();
+         
+        }
+function clearStorage(){
+    if(confirm("do u really  want to clear the todo list"))
+    {
+    console.log("clearing the storage");
+    localStorage.clear();
+    }
+    update();
+}
+    </script>
+</body>
+
+</html>
